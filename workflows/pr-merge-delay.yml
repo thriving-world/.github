@@ -1,0 +1,18 @@
+name: PR Merge Delay
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  delay_merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set delay for merge approval
+      run: |
+        # Wait for 10 minutes (600 seconds)
+        sleep 600
+
+    - name: Approve PR merge after delay
+      run: echo "PR is now 10 minutes old and can be merged."
